@@ -6,6 +6,8 @@ var db=require("./app/models/db.js");
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }))
+
 // simple route
 app.get("/", (req, res) => {
   //res.json({ message: "Welcome to the Sleep Coach." });
@@ -21,10 +23,11 @@ app.get("/quality", (req, res) => {
 });
 
 app.post('/hygiene/contact-us', function(req, res, next) {
-  var f_name = "tester";//req.body.f_name;
+  var f_name = "TESTING";//req.body.f_name;
   var l_name = "hans";//req.body.l_name;
   var email = "abc@blub.ch";//req.body.email;
-  var message = "ich bin die nachricht";// req.body.message;
+  var message = req.body.ponder;
+  console.log("req body: "+req.body);
  
   var sql = `INSERT INTO contacts (f_name, l_name, email, message, created_at) VALUES ("${f_name}", "${l_name}", "${email}", "${message}", NOW())`;
   db.query(sql, function(err, result) {
