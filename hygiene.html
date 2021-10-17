@@ -1,0 +1,350 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+	
+	<script src="https://kit.fontawesome.com/626bd02c25.js" crossorigin="anonymous"></script>
+	
+	<!-- Matomo -->
+	<script>
+	  var _paq = window._paq = window._paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="//e93udypgd.preview.infomaniak.website/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '1']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<!-- End Matomo Code -->
+
+    <title>Sleep Coach</title>
+  </head>
+  <body>
+
+	<nav class="navbar navbar-dark bg-dark">
+	  <div class="container-fluid">
+		<a class="navbar-brand" href="../"><i class="fas fa-bed"></i> Sleep Coach</a>
+		<!--<span id="nof" class="float-right badge bg-light text-dark">0</span>-->
+	  </div>
+	</nav>
+
+
+	<div class="card mb-5 rounded-0">
+		<div class="card-header">
+			<h5 class="card-title display-6">Schlafhygiene</h5>
+		</div>
+		<div class="card-body">
+			<p class="card-text">Wir erfassen die Schlafhygiene, damit wir auf Ideen kommen, wie Deine Schlafqualität verbessert werden kann.</p>		
+		</div>
+		<div class="card-footer">
+			<i class="fas fa-info-circle"></i> Die Schlafhygiene umfasst Faktoren wie z.B. Schlafzeiten, Aktivitäten und Konsumationen vor dem Schlaf oder Licht, Ton und Temperatur im Schlafzimmer, welche sich auf die Schlafqualität auswirken können.
+		</div>
+	</div>
+	
+<div class="container">
+<form action="contact-us" method="POST">	
+	
+	
+	<div class="card border-warning">
+		<div class="card-header bg-warning">
+			<h5 class="card-title">1. Emotionen</h5>
+		</div>
+		<div class="card-body">
+			<p class="card-text">Wie fühlst Du Dich wenn Du zu Bett gehst?</p>
+		</div>
+	</div>
+
+	<div class="card border-primary mb-5" style="border: none;">
+		<div class="card-body px-0 pb-0">
+
+			<div class="form-group">
+				<div class="d-grid gap-2">
+				
+					<div>
+						<label for="valence" class="form-label mb-0 small"><strong class="text-primary">a</strong> Von positiv zu negativ</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="valence" aria-label="Von positiv zu negativ" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total positiv</option>
+								<option value="tuesday">Eher positiv</option>
+								<option value="wednesday">Neutral</option>
+								<option value="thursday">Eher negativ</option>
+								<option value="friday">Total negativ</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>	
+
+					<div>
+						<label for="arousal" class="form-label mb-0 small"><strong class="text-primary">b</strong> Von intensiv zu passiv</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="arousal" aria-label="Von aktiv zu passiv" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total intensiv</option>
+								<option value="tuesday">Leicht aktivierend</option>
+								<option value="wednesday">Weder/Noch</option>
+								<option value="thursday">Eher passiv</option>
+								<option value="friday">Total passiv</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>	
+
+
+
+
+
+	<div class="card border-warning">
+		<div class="card-header bg-warning">
+			<h5 class="card-title">2. Bett/Schlafzimmer</h5>
+		</div>
+		<div class="card-body">
+			<p class="card-text">Wie wohl fühlst Du Dich in Deinem Bett und Schlafzimmer?</p>
+		</div>
+	</div>
+
+	<div class="card border-primary mb-5" style="border: none;">
+		<div class="card-body px-0 pb-0">
+
+			<div class="form-group">
+				<div class="d-grid gap-2">
+				
+					<div>
+						<label for="matrace" class="form-label mb-0 small"><strong class="text-primary">a</strong> Matratze</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="matrace" aria-label="Matratze" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total bequem</option>
+								<option value="tuesday">Eher bequem</option>
+								<option value="wednesday">Weder/Noch</option>
+								<option value="thursday">Eher unbequem</option>
+								<option value="friday">Total unbequem</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>	
+
+					<div>
+						<label for="noise" class="form-label mb-0 small"><strong class="text-primary">b</strong> Geräusche</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="noise" aria-label="Geräusche" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Totaler Lärm</option>
+								<option value="tuesday">Klar hörbare Geräusche</option>
+								<option value="wednesday">Leise Geräusche</option>
+								<option value="thursday">Eher still</option>
+								<option value="thursday">Totale Stille</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
+					
+					<div>
+						<label for="smell" class="form-label mb-0 small"><strong class="text-primary">c</strong> Duft</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="smell" aria-label="Duft" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total angenehm</option>
+								<option value="monday">Eher angenehm</option>
+								<option value="tuesday">Nicht wahrnehmbar</option>
+								<option value="wednesday">Eher unangenehm</option>
+								<option value="thursday">Total unangenehm</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="card border-warning">
+		<div class="card-header bg-warning">
+			<h5 class="card-title">3. Kopfsachen</h5>
+		</div>
+		<div class="card-body">
+			<p class="card-text">Was geht Dir durch den Kopf wenn Du zu Bett gehst?</p>
+		</div>
+	</div>
+
+	<div class="card border-primary mb-5" style="border: none;">
+		<div class="card-body px-0 pb-0">
+
+			<div class="form-group">
+				<div class="d-grid gap-2">
+				
+					<div>
+						<label for="ponder" class="form-label mb-0 small"><strong class="text-primary">a</strong> Grübeln</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="ponder" aria-label="Grübeln" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total ...</option>
+								<option value="tuesday">Eher ...</option>
+								<option value="wednesday">Weder/Noch</option>
+								<option value="thursday">Eher ...</option>
+								<option value="friday">Total ...</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>	
+
+					<div>
+						<label for="planing" class="form-label mb-0 small"><strong class="text-primary">b</strong> Planen</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="planing" aria-label="Planen" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total ...</option>
+								<option value="tuesday">Eher ...</option>
+								<option value="wednesday">Weder/Noch</option>
+								<option value="thursday">Eher ...</option>
+								<option value="thursday">Total ...</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
+					
+					<div>
+						<label for="thinking" class="form-label mb-0 small"><strong class="text-primary">c</strong> Nachdenken</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10" id="thinking" aria-label="Nachdenken" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="monday">Total ...</option>
+								<option value="monday">Eher ...</option>
+								<option value="tuesday">Nicht ...</option>
+								<option value="wednesday">Eher ...</option>
+								<option value="thursday">Total ...</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>	
+
+
+
+
+
+
+
+
+
+
+	<div class="card border-warning">
+		<div class="card-header bg-warning">
+			<h5 class="card-title">Speichern</h5>
+		</div>
+		<div class="card-body">
+			<p class="card-text">Für welchen Abend gelten die Angaben oben und um welche Zeit bist Du an diesem Abend zu Bett gegangen?</p>
+		</div>
+	</div>
+	
+	<div class="card border-warning mb-5" style="border: none;">
+		<div class="card-body px-0 pb-0">
+
+			<div class="form-group">
+				<div class="d-grid gap-2">
+				
+					<div>
+						<label for="date" class="form-label mb-0 small">Angaben für Abend vom ... und Zeit im Bett.</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<input type="date" class="form-control col-5" id="date" aria-label="Abend vom" />
+							
+							<input type="time" class="form-control col-5" id="time" aria-label="Zeit im Bett" />
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
+				
+					<button id="buttonSave" class="btn btn-outline-primary btn-lg mt-1" type="submit">Speichern <i class="far fa-save"></i></button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+
+
+</form>
+</div>
+
+
+
+
+
+
+
+	<div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="questionModalLabel">Informationen zur Frage XY</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+			<p>Hier kommt eine Erklärung zur Frage XY</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+  </body>
+</html>
