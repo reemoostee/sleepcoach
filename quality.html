@@ -54,7 +54,7 @@
 	</div>
 	
 <div class="container">
-<form action="#">	
+<form action="insertdata" method="POST">	
 	
 	
 	<div class="card border-warning">
@@ -73,16 +73,15 @@
 				<div class="d-grid gap-2">
 				
 					<div>
-						<label for="daytimeDysfunction" class="form-label mb-0 small"><strong class="text-primary">a</strong> Daytime dysfunction</label>
+						<label for="daytimeDysfunction" class="form-label mb-0 small"><strong class="text-primary">a</strong> Tagesschläfrigkeit</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="daytimeDysfunction" aria-label="Daytime dysfunction" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="monday">Total ...</option>
-								<option value="tuesday">Eher ...</option>
-								<option value="wednesday">Neutral</option>
-								<option value="thursday">Eher ...</option>
-								<option value="friday">Total ...</option>
+								<option value="0">Selten</option>
+								<option value="1">Manchmal</option>
+								<option value="2">Oft</option>
+								<option value="3">Beinahe immer</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
@@ -91,16 +90,15 @@
 					</div>
 					
 					<div>
-						<label for="restorationAfterSleep" class="form-label mb-0 small"><strong class="text-primary">b</strong> Restoration after sleep</label>
+						<label for="restorationAfterSleep" class="form-label mb-0 small"><strong class="text-primary">b</strong> Erholt nach dem Schlaf</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="restorationAfterSleep" aria-label="Restoration after sleep" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="monday">Total ...</option>
-								<option value="tuesday">Eher ...</option>
-								<option value="wednesday">Neutral</option>
-								<option value="thursday">Eher ...</option>
-								<option value="friday">Total ...</option>
+								<option value="0">Selten</option>
+								<option value="1">Manchmal</option>
+								<option value="2">Oft</option>
+								<option value="3">Beinahe immer</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
@@ -109,16 +107,15 @@
 					</div>
 					
 					<div>
-						<label for="difficultyInFallingAsleep" class="form-label mb-0 small"><strong class="text-primary">c</strong> Difficulty in falling asleep</label>
+						<label for="difficultyInFallingAsleep" class="form-label mb-0 small"><strong class="text-primary">c</strong> Mühe beim Einschlafen</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="difficultyInFallingAsleep" aria-label="Difficulty in falling asleep" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="monday">Total ...</option>
-								<option value="tuesday">Eher ...</option>
-								<option value="wednesday">Neutral</option>
-								<option value="thursday">Eher ...</option>
-								<option value="friday">Total ...</option>
+								<option value="0">Selten</option>
+								<option value="1">Manchmal</option>
+								<option value="2">Oft</option>
+								<option value="3">Beinahe immer</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
@@ -127,16 +124,15 @@
 					</div>
 
 					<div>
-						<label for="difficultyInGettingUp" class="form-label mb-0 small"><strong class="text-primary">d</strong> Difficulty in getting up</label>
+						<label for="difficultyInGettingUp" class="form-label mb-0 small"><strong class="text-primary">d</strong> Mühe beim Aufstehen</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="difficultyInGettingUp" aria-label="Difficulty in getting up" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="monday">Total ...</option>
-								<option value="tuesday">Eher ...</option>
-								<option value="wednesday">Neutral</option>
-								<option value="thursday">Eher ...</option>
-								<option value="friday">Total ...</option>
+								<option value="0">Selten</option>
+								<option value="1">Manchmal</option>
+								<option value="2">Oft</option>
+								<option value="3">Beinahe immer</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
@@ -145,16 +141,15 @@
 					</div>							
 
 					<div>
-						<label for="satisfactionWithSleep" class="form-label mb-0 small"><strong class="text-primary">e</strong> Satisfaction with sleep</label>
+						<label for="satisfactionWithSleep" class="form-label mb-0 small"><strong class="text-primary">e</strong> Zufrieden mit der Schlafqualität</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="satisfactionWithSleep" aria-label="Satisfaction with sleep" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="monday">Total ...</option>
-								<option value="tuesday">Eher ...</option>
-								<option value="wednesday">Neutral</option>
-								<option value="thursday">Eher ...</option>
-								<option value="friday">Total ...</option>
+								<option value="0">Selten</option>
+								<option value="1">Manchmal</option>
+								<option value="2">Oft</option>
+								<option value="3">Beinahe immer</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
@@ -163,16 +158,15 @@
 					</div>		
 
 					<div>
-						<label for="difficultyInMaintainingSleep" class="form-label mb-0 small"><strong class="text-primary">f</strong> Difficulty in maintaining sleep</label>
+						<label for="difficultyInMaintainingSleep" class="form-label mb-0 small"><strong class="text-primary">f</strong> Schwierigkeiten durchzuschlafen</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="difficultyInMaintainingSleep" aria-label="Difficulty in maintaining sleep" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="monday">Total ...</option>
-								<option value="tuesday">Eher ...</option>
-								<option value="wednesday">Neutral</option>
-								<option value="thursday">Eher ...</option>
-								<option value="friday">Total ...</option>
+								<option value="0">Selten</option>
+								<option value="1">Manchmal</option>
+								<option value="2">Oft</option>
+								<option value="3">Beinahe immer</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>

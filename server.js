@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require('path');
-const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 var db=require("./app/models/db.js");
 
@@ -10,7 +9,6 @@ app.use(express.urlencoded({ extended: true }))
 
 // simple route
 app.get("/", (req, res) => {
-  //res.json({ message: "Welcome to the Sleep Coach." });
   res.sendFile(path.join(__dirname,'/index.html'))
 });
 
@@ -22,19 +20,45 @@ app.get("/quality", (req, res) => {
   res.sendFile(path.join(__dirname,'/quality.html'))
 });
 
-app.post('/hygiene/contact-us', function(req, res, next) {
-  var f_name = "TESTING";//req.body.f_name;
-  var l_name = "hans";//req.body.l_name;
-  var email = "abc@blub.ch";//req.body.email;
-  var message = req.body.ponder;
+app.post('/hygiene/insertdata', function(req, res, next) {
+  var date = req.body.date;
+  var time = req.body.time;
+  var valence = req.body.valence;
+  var arousal = req.body.arousal;
+  var matrace = req.body.matrace;
+  var noise = req.body.noise;
+  var smell = req.body.smell;
+  var ponder = req.body.ponder;
+  var planing = req.body.planing;
+  var thinking= req.body.thinking;
   console.log("req body: "+req.body);
- 
-  var sql = `INSERT INTO contacts (f_name, l_name, email, message, created_at) VALUES ("${f_name}", "${l_name}", "${email}", "${message}", NOW())`;
+
+  var sql = `INSERT INTO hygiene(date, time, valence, arousal, matrace, noise, smell, ponder, planing, thinking) VALUES ("${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${ponder}","${planing}","${thinking}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
     console.log('record inserted');
     //req.flash('success', 'Data added successfully!');
     res.redirect('/hygiene');
+  });
+});
+
+app.post('/quality/insertdata', function(req, res, next) {
+  var date = req.body.date;
+  var time = req.body.time;
+  var daytimeDysfunction = req.body.daytimeDysfunction;
+  var restorationAfterSleep = req.body.restorationAfterSleep;
+  var difficultyInFallingAsleep = req.body.difficultyInFallingAsleep;
+  var difficultyInGettingUp = req.body.difficultyInGettingUp;
+  var satisfactionWithSleep = req.body.satisfactionWithSleep;
+  var difficultyInMaintainingSleep = req.body.difficultyInMaintainingSleep;
+  console.log("req body: "+req.body);
+
+  var sql = `INSERT INTO quality(date, time, daytimeDysfunction, restorationAfterSleep, difficultyInFallingAsleep, difficultyInGettingUp, satisfactionWithSleep, difficultyInMaintainingSleep) VALUES ("${date}","${time}","${daytimeDysfunction}","${restorationAfterSleep}","${difficultyInFallingAsleep}","${difficultyInGettingUp}","${satisfactionWithSleep}","${difficultyInMaintainingSleep}")`;
+  db.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log('record inserted');
+    //req.flash('success', 'Data added successfully!');
+    res.redirect('/quality');
   });
 });
 
