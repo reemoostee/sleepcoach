@@ -21,8 +21,8 @@ app.get("/quality", (req, res) => {
 });
 
 app.post('/hygiene/contact-us', function(req, res, next) {
-  var f_name = "steiner";//req.body.f_name;
-  var l_name = "remo";//req.body.l_name;
+  var f_name = "tester";//req.body.f_name;
+  var l_name = "hans";//req.body.l_name;
   var email = "abc@blub.ch";//req.body.email;
   var message = "ich bin die nachricht";// req.body.message;
  
