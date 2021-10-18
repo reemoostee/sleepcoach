@@ -6,6 +6,7 @@ var db=require("./app/models/db.js");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // simple route
 app.get("/", (req, res) => {
@@ -21,8 +22,6 @@ app.get("/quality", (req, res) => {
 });
 
 app.post('/hygiene/insertdata', function(req, res, next) {
-  console.log("hello from here: ");
-  console.log(req.body);
   var date = req.body.date;
   var time = req.body.time;
   var valence = req.body.valence;
@@ -33,13 +32,9 @@ app.post('/hygiene/insertdata', function(req, res, next) {
   var ponder = req.body.ponder;
   var planing = req.body.planing;
   var thinking= req.body.thinking;
-  console.log("req body: "+req.body);
-  var sql= "INSERT INTO hygiene(valence) VALUES ('2')";
-  //var sql = `INSERT INTO hygiene(date, time, valence, arousal, matrace, noise, smell, ponder, planing, thinking) VALUES ("${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${ponder}","${planing}","${thinking}")`;
+  var sql = `INSERT INTO hygiene(date, time, valence, arousal, matrace, noise, smell, ponder, planing, thinking) VALUES ("${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${ponder}","${planing}","${thinking}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
-    console.log('record inserted');
-    //req.flash('success', 'Data added successfully!');
     res.redirect('/hygiene');
   });
 });
@@ -53,13 +48,10 @@ app.post('/quality/insertdata', function(req, res, next) {
   var difficultyInGettingUp = req.body.difficultyInGettingUp;
   var satisfactionWithSleep = req.body.satisfactionWithSleep;
   var difficultyInMaintainingSleep = req.body.difficultyInMaintainingSleep;
-  console.log("req body: "+req.body);
 
   var sql = `INSERT INTO quality(date, time, daytimeDysfunction, restorationAfterSleep, difficultyInFallingAsleep, difficultyInGettingUp, satisfactionWithSleep, difficultyInMaintainingSleep) VALUES ("${date}","${time}","${daytimeDysfunction}","${restorationAfterSleep}","${difficultyInFallingAsleep}","${difficultyInGettingUp}","${satisfactionWithSleep}","${difficultyInMaintainingSleep}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
-    console.log('record inserted');
-    //req.flash('success', 'Data added successfully!');
     res.redirect('/quality');
   });
 });
