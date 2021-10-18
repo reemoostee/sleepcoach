@@ -21,6 +21,8 @@ app.get("/quality", (req, res) => {
 });
 
 app.post('/hygiene/insertdata', function(req, res, next) {
+  console.log("hello from here: ");
+  console.log(req.body);
   var date = req.body.date;
   var time = req.body.time;
   var valence = req.body.valence;
@@ -32,8 +34,8 @@ app.post('/hygiene/insertdata', function(req, res, next) {
   var planing = req.body.planing;
   var thinking= req.body.thinking;
   console.log("req body: "+req.body);
-
-  var sql = `INSERT INTO hygiene(date, time, valence, arousal, matrace, noise, smell, ponder, planing, thinking) VALUES ("${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${ponder}","${planing}","${thinking}")`;
+  var sql= "INSERT INTO hygiene(valence) VALUES ('2')";
+  //var sql = `INSERT INTO hygiene(date, time, valence, arousal, matrace, noise, smell, ponder, planing, thinking) VALUES ("${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${ponder}","${planing}","${thinking}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
     console.log('record inserted');
@@ -60,6 +62,18 @@ app.post('/quality/insertdata', function(req, res, next) {
     //req.flash('success', 'Data added successfully!');
     res.redirect('/quality');
   });
+});
+
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+ 
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
 // set port, listen for requests
