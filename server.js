@@ -21,6 +21,10 @@ app.get("/quality", (req, res) => {
   res.sendFile(path.join(__dirname,'/quality.html'))
 });
 
+app.get("/feedback", (req, res) => {
+  res.sendFile(path.join(__dirname,'/feedback.html'))
+});
+
 app.post('/hygiene/insertdata', function(req, res, next) {
   var date = req.body.date;
   var time = req.body.time;
