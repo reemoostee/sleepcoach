@@ -121,7 +121,7 @@ form .likert li label {width:100%;}
 	<div class="container">
 
         <div class="wrap">
-           <form action="">
+          <form action="#" id="fform">
             <div class="card border-warning">
                 <div class="card-header bg-warning">
                     <h5 class="card-title">Aufgabenangemessenheit</h5>
@@ -1008,21 +1008,18 @@ form .likert li label {width:100%;}
 
 					var data = {};
 
-					data['date'] = $('#date').val();
-					data['time'] = $('#time').val();
-					
-					$(".form-select").each(function(){
-						data[this.id] = $(this).find(":selected").val();
-					});
+					$('input[type="radio"]:checked').each(function() {
+            data[this.name] = $(this).val();
+          });
 					
 					e.preventDefault();
 					$.ajax({
 						type: 'POST',
     					contentType: "application/json",
     					data:JSON.stringify(data),
-						url: '/hygiene/insertdata',
+						url: '/feedback/insertdata',
 						success: function(data) {
-							$("#hform").trigger("reset");
+							//$("#fform").trigger("reset");
 							swal.fire({
 								title: 'Danke für dein Feedback',
 								text: 'Deine Antworten wurden erfolgreich gespeichert',
