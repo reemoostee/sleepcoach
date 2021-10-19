@@ -1027,7 +1027,7 @@ form .likert li label {width:100%;}
     					data:JSON.stringify(data),
 						url: '/feedback/insertdata',
 						success: function(data) {
-							//$("#fform").trigger("reset");
+							$("#fform").trigger("reset");
 							swal.fire({
 								title: 'Danke für dein Feedback',
 								text: 'Deine Antworten wurden erfolgreich gespeichert',
