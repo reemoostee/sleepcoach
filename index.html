@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,7 +43,7 @@
 		</div>
 		<div class="card-body">
 			<p class="card-text">Hier entsteht der Prototyp zur Formular-basierten Erfassung der Schlafhygiene und -qualität.</p>
-			<div id="linksDiv" style="display:none">
+			<div id="hiddenDiv" style="display:none">
 			<p class="card-text">Folgende Links zeigen auf die entsprechenden Erfassungsmasken.</p>
 			<a href="hygiene/" class="card-link">Schlafhygiene</a>
 			<a href="quality/" class="card-link">Schlafqualität</a>
@@ -67,26 +66,40 @@
 	<script>
 		$(document).ready(function() {
 
-			//"http://dummy.com/?technology=jquery&blog=jquerybyexample".
-			//"localhost:3000/?p=15a4522e-34d0-11ec-8d3d-0242ac130003"
+			//"localhost:3000/?a=15a4522e-34d0-11ec-8d3d-0242ac130003"
 
-			$('#linksDiv').hide();
+			$('#hiddenDiv').hide();
 			$('#errorDiv').hide();
 
-			var accessParameter = GetURLParameter('p');
-			console.log("Param: "+accessParameter);
+			var accessToken = GetURLParameter('a');
+			console.log("Param: "+accessToken);
+			var data = {};
+			data["accessToken"] = accessToken;
 
-			if (checkAccessParameterValidity(accessParameter)){
-				alert("hallo2");
-				$('a[href*="hygiene/"]').attr("href", "hygiene/?p="+accessParameter);
-				$('a[href*="quality/"]').attr("href", "quality/?p="+accessParameter);
-				$('a[href*="feedback/"]').attr("href", "feedback/?p="+accessParameter);
-				$('#linksDiv').show();
-				$('#errorDiv').hide();
-			} else {
-				$('#linksDiv').hide();
-				$('#errorDiv').show();
-			}
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json",
+				data: JSON.stringify(data),
+				url: '/checkAccessTokenValidity',
+				success: function(data) {
+					var response = JSON.parse(data);
+					if (response["accessTokenValid"]){
+						$('a[href*="./"]').attr("href", "./?a="+accessToken);
+						$('a[href*="hygiene/"]').attr("href", "hygiene/?a="+accessToken);
+						$('a[href*="quality/"]').attr("href", "quality/?a="+accessToken);
+						$('a[href*="feedback/"]').attr("href", "feedback/?a="+accessToken);
+						$('#hiddenDiv').show();
+						$('#errorDiv').hide();
+					} else {
+						$('#hiddenDiv').hide();
+						$('#errorDiv').show();
+					}
+					
+
+				},
+				error: function(data) {
+				}
+			});
 			
 		});
 
@@ -102,9 +115,6 @@
 					return sParameterName[1];
 				}
 			}
-		}
-		function checkAccessParameterValidity(accessParameter){
-			return true;
 		}
 	</script>
 

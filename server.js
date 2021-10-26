@@ -69,6 +69,14 @@ app.post('/feedback/insertdata', function(req, res, next) {
   });
 });
 
+app.post('/checkAccessTokenValidity', function(req, res, next) {
+  console.log("checkAccessTokenValidity AT: "+req.body.accessToken);
+  var data = {};
+  data["accessToken"] = req.body.accessToken;
+  data["accessTokenValid"] = (req.body.accessToken=="15a4522e-34d0-11ec-8d3d-0242ac130003");
+  res.end( JSON.stringify(data));
+});
+
 
 // error handler
 app.use(function(err, req, res, next) {
