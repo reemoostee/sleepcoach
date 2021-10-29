@@ -50,16 +50,16 @@
 			<br />(<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2869.2006.00544.x" target="_BLANK">Sleep Quality Scale</a>)
 			</p>		
 		</div>
-		<div id="errorDiv" style="display:none" class="p-3 mb-2 bg-danger text-white">
+		<div id="errorDiv" class="p-3 mb-2 bg-danger text-white">
 			<p class="card-text">Bitte verwende einen gültigen Zugangslink für den Aufruf der Seite.</p>
 		</div>
-		<div class="card-footer">
+		<div  style="display:none" class="card-footer accessTokenHidden">
 			<i class="fas fa-info-circle"></i> Die Schlafqualität wird unter verschiedenen Aspekten bewertet, wie z. B. Schlafdauer, Schlaftiefe, Aufstehen nach dem Schlaf, Zustand nach dem Schlaf, Schlafmenge und Zufriedenheit mit dem Schlaf.
 			<br/><br/></i> Über das <i class="fas fa-bed"></i>-Icon ganz oben links gelangst Du wieder auf die Startseite.
 		</div>
 	</div>
 	
-<div class="container" id="hiddenDiv" style="display:none">
+<div class="container accessTokenHidden" style="display:none">
 	<form action="#" id="qform">
 	
 	
@@ -262,7 +262,7 @@
 
 			//"localhost:3000/?a=15a4522e-34d0-11ec-8d3d-0242ac130003"
 
-			$('#hiddenDiv').hide();
+			$('.accessTokenHidden').hide();
 			$('#errorDiv').hide();
 
 			var accessToken = GetURLParameter('a');
@@ -279,10 +279,10 @@
 					var response = JSON.parse(data);
 					if (response["accessTokenValid"]){
 						$('a[href*="../"]').attr("href", "../?a="+accessToken);
-						$('#hiddenDiv').show();
+						$('.accessTokenHidden').show();
 						$('#errorDiv').hide();
 					} else {
-						$('#hiddenDiv').hide();
+						$('.accessTokenHidden').hide();
 						$('#errorDiv').show();
 					}
 					

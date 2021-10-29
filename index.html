@@ -43,7 +43,7 @@
 		</div>
 		<div class="card-body">
 			<p class="card-text">Hier entsteht der Prototyp zur Formular-basierten Erfassung der Schlafhygiene und -qualität.</p>
-			<div id="hiddenDiv" style="display:none">
+			<div style="display:none" class="accessTokenHidden">
 			<p class="card-text">Folgende Links zeigen auf die entsprechenden Erfassungsmasken.</p>
 			<a href="hygiene/" class="card-link">Schlafhygiene</a>
 			<a href="quality/" class="card-link">Schlafqualität</a>
@@ -58,7 +58,7 @@
 				<div class="p-3 mb-2 bg-danger text-white">Your browser does not support JavaScript!</div>
 			 </noscript>
 		</div>
-		<div class="card-footer">
+		<div class="card-footer accessTokenHidden">
 			<i class="fas fa-info-circle"></i> Über das <i class="fas fa-bed"></i>-Icon ganz oben links kommst Du immer wieder zurück hierher.
 		</div>
 	</div>
@@ -68,7 +68,7 @@
 
 			//"localhost:3000/?a=15a4522e-34d0-11ec-8d3d-0242ac130003"
 
-			$('#hiddenDiv').hide();
+			$('.accessTokenHidden').hide();
 			$('#errorDiv').hide();
 
 			var accessToken = GetURLParameter('a');
@@ -88,10 +88,10 @@
 						$('a[href*="hygiene/"]').attr("href", "hygiene/?a="+accessToken);
 						$('a[href*="quality/"]').attr("href", "quality/?a="+accessToken);
 						$('a[href*="feedback/"]').attr("href", "feedback/?a="+accessToken);
-						$('#hiddenDiv').show();
+						$('.accessTokenHidden').show();
 						$('#errorDiv').hide();
 					} else {
-						$('#hiddenDiv').hide();
+						$('.accessTokenHidden').hide();
 						$('#errorDiv').show();
 					}
 					

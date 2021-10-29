@@ -61,7 +61,7 @@ app.post('/quality/insertdata', function(req, res, next) {
 });
 
 app.post('/feedback/insertdata', function(req, res, next) {
-  console.log(req.body.question_001a);
+  //add column accesstoken
  var sql = `INSERT INTO feedback(question_001a, question_001b, question_001c, question_001d, question_001e, question_002a, question_002b, question_002c, question_002d, question_002e, question_003a, question_003b, question_003c, question_003d, question_003e, question_004a, question_004b, question_004c, question_004d, question_004e) VALUES ("${req.body.question_001a}", "${req.body.question_001b}", "${req.body.question_001c}", "${req.body.question_001d}", "${req.body.question_001e}", "${req.body.question_002a}", "${req.body.question_002b}", "${req.body.question_002c}", "${req.body.question_002d}", "${req.body.question_002e}", "${req.body.question_003a}", "${req.body.question_003b}", "${req.body.question_003c}", "${req.body.question_003d}", "${req.body.question_003e}", "${req.body.question_004a}", "${req.body.question_004b}", "${req.body.question_004c}", "${req.body.question_004d}", "${req.body.question_004e}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
@@ -70,11 +70,14 @@ app.post('/feedback/insertdata', function(req, res, next) {
 });
 
 app.post('/checkAccessTokenValidity', function(req, res, next) {
-  console.log("checkAccessTokenValidity AT: "+req.body.accessToken);
   var data = {};
-  data["accessToken"] = req.body.accessToken;
-  data["accessTokenValid"] = (req.body.accessToken=="15a4522e-34d0-11ec-8d3d-0242ac130003");
-  res.end( JSON.stringify(data));
+  data['accessToken'] = req.body.accessToken;
+  var sql = "SELECT COUNT(*) AS countAT FROM accesstokens WHERE accesstoken = '"+ data['accessToken']+"'";
+  db.query(sql, function(err,result) {
+    if (err) throw err;
+      data['accessTokenValid'] = (result[0].countAT>=1);
+      res.end( JSON.stringify(data));  
+  });
 });
 
 

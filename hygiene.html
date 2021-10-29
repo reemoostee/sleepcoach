@@ -51,13 +51,13 @@
 		<div id="errorDiv" style="display:none" class="p-3 mb-2 bg-danger text-white">
 			<p class="card-text">Bitte verwende einen gültigen Zugangslink für den Aufruf der Seite.</p>
 		</div>
-		<div class="card-footer">
+		<div style="display:none" class="card-footer accessTokenHidden">
 			<i class="fas fa-info-circle"></i> Die Schlafhygiene umfasst Faktoren wie z.B. Schlafzeiten, Aktivitäten und Konsumationen vor dem Schlaf oder Licht, Ton und Temperatur im Schlafzimmer, welche sich auf die Schlafqualität auswirken können.
 			<br/><br/></i> Über das <i class="fas fa-bed"></i>-Icon ganz oben links gelangst Du wieder auf die Startseite.
 		</div>
 	</div>
 	
-	<div class="container" id="hiddenDiv" style="display:none">
+	<div class="container accessTokenHidden" style="display:none">
 	<form action="#" id="hform">
 	
 	
@@ -349,7 +349,7 @@
 
 			//"localhost:3000/?a=15a4522e-34d0-11ec-8d3d-0242ac130003"
 
-			$('#hiddenDiv').hide();
+			$('.accessTokenHidden').hide();
 			$('#errorDiv').hide();
 
 			var accessToken = GetURLParameter('a');
@@ -366,10 +366,10 @@
 					var response = JSON.parse(data);
 					if (response["accessTokenValid"]){
 						$('a[href*="../"]').attr("href", "../?a="+accessToken);
-						$('#hiddenDiv').show();
+						$('.accessTokenHidden').show();
 						$('#errorDiv').hide();
 					} else {
-						$('#hiddenDiv').hide();
+						$('.accessTokenHidden').hide();
 						$('#errorDiv').show();
 					}
 					
