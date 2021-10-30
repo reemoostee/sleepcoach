@@ -1051,6 +1051,8 @@ form .likert li label {width:100%;}
 
 					var data = {};
 
+          data["accessToken"] = GetURLParameter('a');	
+
 					$('input[type="radio"]:checked').each(function() {
             data[this.name] = $(this).val();
           });
