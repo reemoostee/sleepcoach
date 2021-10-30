@@ -33,10 +33,12 @@ app.post('/hygiene/insertdata', function(req, res, next) {
   var matrace = req.body.matrace;
   var noise = req.body.noise;
   var smell = req.body.smell;
+  var brightness = req.body.brightness;
+  var room = req.body.room;
   var ponder = req.body.ponder;
   var planing = req.body.planing;
   var thinking= req.body.thinking;
-  var sql = `INSERT INTO hygiene(accesstoken, date, time, valence, arousal, matrace, noise, smell, ponder, planing, thinking) VALUES ("${req.body.accessToken}", "${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${ponder}","${planing}","${thinking}")`;
+  var sql = `INSERT INTO hygiene(accesstoken, date, time, valence, arousal, matrace, noise, smell, brightness, room, ponder, planing, thinking) VALUES ("${req.body.accessToken}", "${date}","${time}","${valence}","${arousal}","${matrace}","${noise}","${smell}","${brightness}","${room}","${ponder}","${planing}","${thinking}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
     res.redirect('/hygiene');
@@ -46,14 +48,13 @@ app.post('/hygiene/insertdata', function(req, res, next) {
 app.post('/quality/insertdata', function(req, res, next) {
   var date = req.body.date;
   var time = req.body.time;
-  var daytimeDysfunction = req.body.daytimeDysfunction;
   var restorationAfterSleep = req.body.restorationAfterSleep;
   var difficultyInFallingAsleep = req.body.difficultyInFallingAsleep;
   var difficultyInGettingUp = req.body.difficultyInGettingUp;
   var satisfactionWithSleep = req.body.satisfactionWithSleep;
   var difficultyInMaintainingSleep = req.body.difficultyInMaintainingSleep;
 
-  var sql = `INSERT INTO quality(accesstoken, date, time, daytimeDysfunction, restorationAfterSleep, difficultyInFallingAsleep, difficultyInGettingUp, satisfactionWithSleep, difficultyInMaintainingSleep) VALUES ("${req.body.accessToken}", "${date}","${time}","${daytimeDysfunction}","${restorationAfterSleep}","${difficultyInFallingAsleep}","${difficultyInGettingUp}","${satisfactionWithSleep}","${difficultyInMaintainingSleep}")`;
+  var sql = `INSERT INTO quality(accesstoken, date, time, restorationAfterSleep, difficultyInFallingAsleep, difficultyInGettingUp, satisfactionWithSleep, difficultyInMaintainingSleep) VALUES ("${req.body.accessToken}", "${date}","${time}","${restorationAfterSleep}","${difficultyInFallingAsleep}","${difficultyInGettingUp}","${satisfactionWithSleep}","${difficultyInMaintainingSleep}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
     res.redirect('/quality');
@@ -76,6 +77,17 @@ app.post('/checkAccessTokenValidity', function(req, res, next) {
   db.query(sql, function(err,result) {
     if (err) throw err;
       data['accessTokenValid'] = (result[0].countAT>=1);
+      res.end( JSON.stringify(data));  
+  });
+});
+
+app.post('/checkExistingAnswersForAccessToken', function(req, res, next) {
+  var data = {};
+  data['accessToken'] = req.body.accessToken;
+  var sql = "SELECT COUNT(*) AS countAT FROM hygiene WHERE accesstoken = '"+ data['accessToken']+"'";
+  db.query(sql, function(err,result) {
+    if (err) throw err;
+      data['existingAnswers'] = (result[0].countAT>=1);
       res.end( JSON.stringify(data));  
   });
 });

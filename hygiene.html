@@ -95,16 +95,16 @@
 					</div>	
 
 					<div>
-						<label for="arousal" class="form-label mb-0 small"><strong class="text-primary">b</strong> Von intensiv zu passiv</label>
+						<label for="arousal" class="form-label mb-0 small"><strong class="text-primary">b</strong> Von entspannt zu unruhig</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="arousal" aria-label="Von aktiv zu passiv" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="2">Total intensiv</option>
-								<option value="1">Leicht aktivierend</option>
+								<option value="2">Total entspannt</option>
+								<option value="1">Eher entspannt</option>
 								<option value="0">Weder/Noch</option>
-								<option value="-1">Eher passiv</option>
-								<option value="-2">Total passiv</option>
+								<option value="-1">Eher unruhig</option>
+								<option value="-2">Total unruhig</option>
 							</select>
 							
 							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
@@ -141,8 +141,9 @@
 						<label for="matrace" class="form-label mb-0 small"><strong class="text-primary">a</strong> Matratze</label>
 						<div class="input-group input-group input-group-lg">
 							
-							<select class="form-select col-10" id="matrace" aria-label="Matratze" required>
+							<select class="form-select col-10 unchanged" id="matrace" aria-label="Matratze" required>
 								<option value="" selected>Auswahl ...</option>
+								<option value="99"> - wie bisher/unverändert - </option>
 								<option value="2">Total bequem</option>
 								<option value="1">Eher bequem</option>
 								<option value="0">Weder/Noch</option>
@@ -159,8 +160,9 @@
 						<label for="noise" class="form-label mb-0 small"><strong class="text-primary">b</strong> Geräusche</label>
 						<div class="input-group input-group input-group-lg">
 							
-							<select class="form-select col-10" id="noise" aria-label="Geräusche" required>
+							<select class="form-select col-10 unchanged" id="noise" aria-label="Geräusche" required>
 								<option value="" selected>Auswahl ...</option>
+								<option value="99"> - wie bisher/unverändert - </option>
 								<option value="2">Totaler Lärm</option>
 								<option value="1">Klar hörbare Geräusche</option>
 								<option value="0">Leise Geräusche</option>
@@ -174,11 +176,12 @@
 					</div>
 					
 					<div>
-						<label for="smell" class="form-label mb-0 small"><strong class="text-primary">c</strong> Duft</label>
+						<label for="smell" class="form-label mb-0 small"><strong class="text-primary">c</strong> Gerüche</label>
 						<div class="input-group input-group input-group-lg">
 							
-							<select class="form-select col-10" id="smell" aria-label="Duft" required>
+							<select class="form-select col-10 unchanged" id="smell" aria-label="Duft" required>
 								<option value="" selected>Auswahl ...</option>
+								<option value="99"> - wie bisher/unverändert - </option>
 								<option value="2">Total angenehm</option>
 								<option value="1">Eher angenehm</option>
 								<option value="0">Nicht wahrnehmbar</option>
@@ -190,7 +193,43 @@
 
 						</div>
 					</div>
+
+					<div>
+						<label for="brightness" class="form-label mb-0 small"><strong class="text-primary">d</strong> Helligkeit</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10 unchanged" id="brightness" aria-label="Helligkeit" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="99"> - wie bisher/unverändert - </option>
+								<option value="3">Total hell</option>
+								<option value="2">Teilweise hell</option>
+								<option value="1">Wenig hell</option>
+								<option value="0">Dunkel</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
 					
+					<div>
+						<label for="room" class="form-label mb-0 small"><strong class="text-primary">e</strong> Räumliche Einengung</label>
+						<div class="input-group input-group input-group-lg">
+							
+							<select class="form-select col-10 unchanged" id="room" aria-label="Räumliche Einengung" required>
+								<option value="" selected>Auswahl ...</option>
+								<option value="99"> - wie bisher/unverändert - </option>
+								<option value="2">Sehr geräumig/gross</option>
+								<option value="1">Eher geräumig/gross</option>
+								<option value="0">Weder noch</option>
+								<option value="-1">Eher eng/einengend</option>
+								<option value="-2">Total eng/einengend</option>
+							</select>
+							
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -224,7 +263,7 @@
 							
 							<select class="form-select col-10" id="ponder" aria-label="Grübeln" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="2">Intensiv</option>
+								<option value="2">Intensiv/Total</option>
 								<option value="1">Ein bisschen/wenig</option>
 								<option value="0">Gar nicht</option>
 							</select>
@@ -304,8 +343,26 @@
 							
 							<input type="time" class="form-control col-5" id="time" aria-label="Zeit im Bett" />
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalDateTime"><i class="fas fa-question"></i></button>
 
+						</div>
+					</div>
+
+										
+					<div class="modal fade" id="questionModalDateTime" tabindex="-1" aria-labelledby="questionModalDateTimeLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalDateTimeLabel">Informationen zu Datum/Uhrzeit</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Bitte erfasse das Datum der Nacht auf die sich deine Angaben beziehen und wann du am darauf folgenden Tag aufgestanden bist.</p>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
 						</div>
 					</div>
 				
@@ -321,29 +378,6 @@
 </form>
 </div>
 
-
-
-
-
-
-
-	<div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<h5 class="modal-title" id="questionModalLabel">Informationen zur Frage XY</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		  </div>
-		  <div class="modal-body">
-			<p>Hier kommt eine Erklärung zur Frage XY</p>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-
 	<script>
 		$(document).ready(function() {
 
@@ -353,9 +387,30 @@
 			$('#errorDiv').hide();
 
 			var accessToken = GetURLParameter('a');
-			console.log("Param: "+accessToken);
 			var data = {};
 			data["accessToken"] = accessToken;
+		
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json",
+				data: JSON.stringify(data),
+				url: '/checkExistingAnswersForAccessToken',
+				success: function(data) {
+					var response = JSON.parse(data);
+					if (response["existingAnswers"]){
+
+						$(".unchanged option[value='']").each(function() {
+							$(this).remove();
+						});
+					} else {
+						$(".unchanged option[value='99']").each(function() {
+							$(this).remove();
+						});
+					}
+				},
+				error: function(data) {
+				}
+			});
 
 			$.ajax({
 				type: 'POST',
@@ -366,8 +421,10 @@
 					var response = JSON.parse(data);
 					if (response["accessTokenValid"]){
 						$('a[href*="../"]').attr("href", "../?a="+accessToken);
+
 						$('.accessTokenHidden').show();
 						$('#errorDiv').hide();
+
 					} else {
 						$('.accessTokenHidden').hide();
 						$('#errorDiv').show();
@@ -411,7 +468,6 @@
 
 						},
 						error: function(data) {
-							alert("error");
 							swal.fire({
 								title: 'Speichern fehlgeschlagen',
 								text: 'Es ist ein Fehler beim Speichern aufgetreten',

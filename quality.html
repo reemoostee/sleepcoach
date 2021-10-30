@@ -47,7 +47,7 @@
 		</div>
 		<div class="card-body">
 			<p class="card-text">Wir erfassen die Schlafqualität, damit wir erkennen können, welche Faktoren sich bei Dir am stärksten auswirken.
-			<br />(<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2869.2006.00544.x" target="_BLANK">Sleep Quality Scale</a>)
+				<br/>Idealerweise erfasst du täglich nach dem Aufstehen deine Wahrnehmung zu den aufgeführten Faktoren.
 			</p>		
 		</div>
 		<div id="errorDiv" class="p-3 mb-2 bg-danger text-white">
@@ -77,26 +77,9 @@
 
 			<div class="form-group">
 				<div class="d-grid gap-2">
-				
-					<div>
-						<label for="daytimeDysfunction" class="form-label mb-0 small"><strong class="text-primary">a</strong> Tagesschläfrigkeit</label>
-						<div class="input-group input-group input-group-lg">
-							
-							<select class="form-select col-10" id="daytimeDysfunction" aria-label="Daytime dysfunction" required>
-								<option value="" selected>Auswahl ...</option>
-								<option value="0">Selten</option>
-								<option value="1">Manchmal</option>
-								<option value="2">Oft</option>
-								<option value="3">Beinahe immer</option>
-							</select>
-							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
-
-						</div>
-					</div>
 					
 					<div>
-						<label for="restorationAfterSleep" class="form-label mb-0 small"><strong class="text-primary">b</strong> Erholt nach dem Schlaf</label>
+						<label for="restorationAfterSleep" class="form-label mb-0 small"><strong class="text-primary">a</strong> Erholt nach dem Schlaf</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="restorationAfterSleep" aria-label="Restoration after sleep" required>
@@ -107,13 +90,31 @@
 								<option value="3">Beinahe immer</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalrestorationAfterSleep"><i class="fas fa-question"></i></button>
 
+						</div>
+					</div>
+
+					
+					<div class="modal fade" id="questionModalrestorationAfterSleep" tabindex="-1" aria-labelledby="questionModalrestorationAfterSleepLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalrestorationAfterSleepLabel">Erholt nach dem Schlaf</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Erfasse bitte wie oft du dich nach dem Schlaf erholt fühlst.</p>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
 						</div>
 					</div>
 					
 					<div>
-						<label for="difficultyInFallingAsleep" class="form-label mb-0 small"><strong class="text-primary">c</strong> Mühe beim Einschlafen</label>
+						<label for="difficultyInFallingAsleep" class="form-label mb-0 small"><strong class="text-primary">b</strong> Mühe beim Einschlafen</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="difficultyInFallingAsleep" aria-label="Difficulty in falling asleep" required>
@@ -124,13 +125,31 @@
 								<option value="3">Beinahe immer</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModaldifficultyInFallingAsleep"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>
 
+					
+					<div class="modal fade" id="questionModaldifficultyInFallingAsleep" tabindex="-1" aria-labelledby="questionModaldifficultyInFallingAsleepLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModaldifficultyInFallingAsleepLabel">Mühe beim Einschlafen</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Erfasse bitte wie oft du Mühe beim Einschlafen hast.</p>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
+						</div>
+					</div>
+
 					<div>
-						<label for="difficultyInGettingUp" class="form-label mb-0 small"><strong class="text-primary">d</strong> Mühe beim Aufstehen</label>
+						<label for="difficultyInGettingUp" class="form-label mb-0 small"><strong class="text-primary">c</strong> Mühe beim Aufstehen</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="difficultyInGettingUp" aria-label="Difficulty in getting up" required>
@@ -141,13 +160,32 @@
 								<option value="3">Beinahe immer</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModaldifficultyInGettingUp"><i class="fas fa-question"></i></button>
 
 						</div>
-					</div>							
+					</div>
+					
+					
+					
+					<div class="modal fade" id="questionModaldifficultyInGettingUp" tabindex="-1" aria-labelledby="questionModaldifficultyInGettingUpLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModaldifficultyInGettingUpLabel">Mühe beim Aufstehen</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Erfasse bitte wie oft du Mühe beim Aufstehen hast.</p>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
+						</div>
+					</div>
 
 					<div>
-						<label for="satisfactionWithSleep" class="form-label mb-0 small"><strong class="text-primary">e</strong> Zufrieden mit der Schlafqualität</label>
+						<label for="satisfactionWithSleep" class="form-label mb-0 small"><strong class="text-primary">d</strong> Zufrieden mit der Schlafqualität</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="satisfactionWithSleep" aria-label="Satisfaction with sleep" required>
@@ -158,13 +196,32 @@
 								<option value="3">Beinahe immer</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalsatisfactionWithSleep"><i class="fas fa-question"></i></button>
 
 						</div>
-					</div>		
+					</div>	
+					
+					
+					<div class="modal fade" id="questionModalsatisfactionWithSleep" tabindex="-1" aria-labelledby="questionModalsatisfactionWithSleepLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalsatisfactionWithSleepLabel">Zufrieden mit der Schlafqualität</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Erfasse bitte wie oft du mit deiner Schlafqualität zufrieden bist.</p>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
+						</div>
+					</div>
+
 
 					<div>
-						<label for="difficultyInMaintainingSleep" class="form-label mb-0 small"><strong class="text-primary">f</strong> Schwierigkeiten durchzuschlafen</label>
+						<label for="difficultyInMaintainingSleep" class="form-label mb-0 small"><strong class="text-primary">e</strong> Schwierigkeiten durchzuschlafen</label>
 						<div class="input-group input-group input-group-lg">
 							
 							<select class="form-select col-10" id="difficultyInMaintainingSleep" aria-label="Difficulty in maintaining sleep" required>
@@ -175,10 +232,29 @@
 								<option value="3">Beinahe immer</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalDifficultyInMaintainingSleep"><i class="fas fa-question"></i></button>
 
 						</div>
-					</div>		
+					</div>
+					
+					
+					<div class="modal fade" id="questionModalDifficultyInMaintainingSleep" tabindex="-1" aria-labelledby="questionModalDifficultyInMaintainingSleepLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalDifficultyInMaintainingSleepLabel">Schwierigkeiten durchzuschlafen</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Erfasse bitte wie oft du Schwierigkeiten durchzuschlafen hast.</p>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
+						</div>
+					</div>
+
 
 				</div>
 			</div>
@@ -186,20 +262,12 @@
 		</div>
 	</div>	
 
-
-
-
-
-
-
-
-
 	<div class="card border-warning">
 		<div class="card-header bg-warning">
 			<h5 class="card-title">Speichern</h5>
 		</div>
 		<div class="card-body">
-			<p class="card-text">Für welche Nacht gelten die Angaben oben und um welche Zeit bist Du am darauf folgenden Morgen aufgestanden?</p>
+			<p class="card-text">Für welche Nacht gelten die Angaben oben und um welche Zeit bist Du am darauf folgenden Tag aufgestanden?</p>
 		</div>
 	</div>
 	
@@ -217,12 +285,30 @@
 							
 							<input type="time" class="form-control col-5" id="time" aria-label="Zeit vom Aufstehen" />
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalDateTime"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>
 				
 					<button id="buttonSave" class="btn btn-outline-primary btn-lg mt-1" type="submit">Speichern <i class="far fa-save"></i></button>
+				</div>
+			</div>
+
+			
+			<div class="modal fade" id="questionModalDateTime" tabindex="-1" aria-labelledby="questionModalDateTimeLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h5 class="modal-title" id="questionModalDateTimeLabel">Informationen zu Datum/Uhrzeit</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+					<p>Bitte erfasse das Datum der Nacht auf die sich deine Angaben beziehen und wann du am darauf folgenden Tag aufgestanden bist.</p>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+					</div>
+				</div>
 				</div>
 			</div>
 			
@@ -233,29 +319,6 @@
 
 </form>
 </div>
-
-
-
-
-
-
-
-	<div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<h5 class="modal-title" id="questionModalLabel">Informationen zur Frage XY</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		  </div>
-		  <div class="modal-body">
-			<p>Hier kommt eine Erklärung zur Frage XY</p>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
 
 	<script>
 		$(document).ready(function() {
@@ -318,13 +381,12 @@
 							$("#qform").trigger("reset");
 							swal.fire({
 								title: 'Danke',
-								text: 'Deine Antworten wurden erfolgreich gespeichert',
+								text: 'Deine Antworten wurden erfolgreich gespeichert.',
 								icon: 'success'
 							});
 
 						},
 						error: function(data) {
-							alert("error");
 							swal.fire({
 								title: 'Speichern fehlgeschlagen',
 								text: 'Es ist ein Fehler beim Speichern aufgetreten',
