@@ -46,7 +46,8 @@
 			<h5 class="card-title display-6">Schlafhygiene</h5>
 		</div>
 		<div class="card-body">
-			<p class="card-text">Wir erfassen die Schlafhygiene, damit wir auf Ideen kommen, wie Deine Schlafqualität verbessert werden kann.</p>		
+			<p class="card-text">Wir erfassen die Schlafhygiene, damit wir auf Ideen kommen, wie Deine Schlafhygiene verbessert werden kann.</p>	
+			<br/>Idealerweise erfasst du täglich nach dem Aufstehen deine Wahrnehmung zu den aufgeführten Faktoren.	
 		</div>
 		<div id="errorDiv" style="display:none" class="p-3 mb-2 bg-danger text-white">
 			<p class="card-text">Bitte verwende einen gültigen Zugangslink für den Aufruf der Seite.</p>
@@ -89,7 +90,7 @@
 								<option value="-2">Total negativ</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart1"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>	
@@ -107,8 +108,44 @@
 								<option value="-2">Total unruhig</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart1"><i class="fas fa-question"></i></button>
 
+						</div>
+					</div>
+
+					<div class="modal fade" id="questionModalPart1" tabindex="-1" aria-labelledby="questionModalPart1Label" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalPart1Label">Informationen zu Emotionen</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Bitte erfasse wie du dich gefühlt hast, als du zu Bett gegangen bist.
+								<table>
+									<tr>
+										<td style="font-weight: bold;">Generell
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von positiv zu negativ
+										</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold;">Anspannung
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von total entspannt zu total unruhig
+										</td>
+									</tr>
+								</table>
+								
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
 						</div>
 					</div>
 					
@@ -151,7 +188,7 @@
 								<option value="-2">Total unbequem</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart2"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>	
@@ -170,7 +207,7 @@
 								<option value="-2">Totale Stille</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart2"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>
@@ -189,7 +226,7 @@
 								<option value="-2">Total unangenehm</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart2"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>
@@ -207,7 +244,7 @@
 								<option value="0">Dunkel</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart2"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>
@@ -223,11 +260,71 @@
 								<option value="1">Eher geräumig/gross</option>
 								<option value="0">Weder noch</option>
 								<option value="-1">Eher eng/einengend</option>
-								<option value="-2">Total eng/einengend</option>
+								<option value="-2">Sehr eng/einengend</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart2"><i class="fas fa-question"></i></button>
 
+						</div>
+					</div>
+
+					<div class="modal fade" id="questionModalPart2" tabindex="-1" aria-labelledby="questionModalPart2Label" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalPart2Label">Informationen zu Bett/Schlafzimmer</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Bitte erfasse deine Wahrnehmung zu Bett und Schlafzimmer.
+								<table>
+									<tr>
+										<td style="font-weight: bold;">Matratze
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von total bequem zu total unbequem
+										</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold;">Geräusche
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von totalem Lärm zu totaler Stille
+										</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold;">Gerüche
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von total angenehm zu total unangenehm
+										</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold;">Helligkeit
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von total hell zu dunkel
+										</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold;">Einengung
+										</td>
+										<td>&nbsp;</td>
+										<td>
+											von sehr geräumig zu sehr eng
+										</td>
+									</tr>
+								</table>
+								
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
 						</div>
 					</div>
 				</div>
@@ -263,12 +360,12 @@
 							
 							<select class="form-select col-10" id="ponder" aria-label="Grübeln" required>
 								<option value="" selected>Auswahl ...</option>
-								<option value="2">Intensiv/Total</option>
+								<option value="2">Intensiv</option>
 								<option value="1">Ein bisschen/wenig</option>
 								<option value="0">Gar nicht</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart3"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>	
@@ -284,7 +381,7 @@
 								<option value="0">Gar nicht</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart3"><i class="fas fa-question"></i></button>
 
 						</div>
 					</div>
@@ -300,8 +397,34 @@
 								<option value="0">Gar nicht</option>
 							</select>
 							
-							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModal"><i class="fas fa-question"></i></button>
+							<button type="button" class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="modal" data-bs-target="#questionModalPart3"><i class="fas fa-question"></i></button>
 
+						</div>
+					</div>
+
+					<div class="modal fade" id="questionModalPart3" tabindex="-1" aria-labelledby="questionModalPart3Label" aria-hidden="true">
+						<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="questionModalPart3Label">Informationen zu Kopfsachen</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<p>Bitte erfasse was dir durch den Kopf gegangen ist, als du zu Bett gegangen bist.
+							<p>
+								Wie intensiv hast du
+								<ul>
+									<li>gegrübelt?</li>
+									<li>geplant?</li>
+									<li>nachgedacht?</li>
+								</ul>
+							</p>
+								
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary btn-lg col-12" data-bs-dismiss="modal">Ok</button>
+							</div>
+						</div>
 						</div>
 					</div>
 					
